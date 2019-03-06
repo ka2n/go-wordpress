@@ -1,5 +1,5 @@
 # go-wordpress
-[![GoDoc](https://godoc.org/github.com/robbiet480/go-wordpress?status.svg)](https://godoc.org/github.com/robbiet480/go-wordpress)
+[![GoDoc](https://godoc.org/github.com/ka2n/go-wordpress?status.svg)](https://godoc.org/github.com/robbiet480/go-wordpress)
 
 A Go client library for the [Wordpress REST API](https://developer.wordpress.org/rest-api/)
 
@@ -7,7 +7,7 @@ A Go client library for the [Wordpress REST API](https://developer.wordpress.org
 ## Installation
 
 ```bash
-go get github.com/robbiet480/go-wordpress
+go get github.com/ka2n/go-wordpress
 ```
 
 ## Usage
@@ -21,7 +21,7 @@ import (
   "fmt"
   "net/http"
 
-  "github.com/robbiet480/go-wordpress"
+  "github.com/ka2n/go-wordpress"
 )
 
 func main() {
@@ -107,7 +107,7 @@ package main
 import (
   "context"
 
-  "github.com/robbiet480/go-wordpress"
+  "github.com/ka2n/go-wordpress"
 )
 
 func main() {
@@ -164,7 +164,7 @@ export WP_API_URL=http://192.168.99.100:32777/wp-json/
 export WP_USER=<user>
 export WP_PASSWD=<password>
 
-cd $GOPATH/src/github.com/robbiet480/go-wordpress
+cd $GOPATH/src/github.com/ka2n/go-wordpress
 go test
 ```
 

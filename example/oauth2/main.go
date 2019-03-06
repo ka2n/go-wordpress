@@ -4,7 +4,7 @@ import (
 	"context"
 	"log"
 
-	"github.com/robbiet480/go-wordpress"
+	"github.com/ka2n/go-wordpress"
 	"golang.org/x/oauth2"
 )
 
