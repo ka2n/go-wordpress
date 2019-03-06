@@ -26,7 +26,7 @@ type User struct {
 	Link              string                 `json:"link,omitempty"`
 	Name              string                 `json:"name,omitempty"`
 	Nickname          string                 `json:"nickname,omitempty"`
-	RegisteredDate    Time                   `json:"registered_date,omitempty"`
+	RegisteredDate    *Time                  `json:"registered_date,omitempty"`
 	Roles             []string               `json:"roles,omitempty"`
 	Slug              string                 `json:"slug,omitempty"`
 	URL               string                 `json:"url,omitempty"`
