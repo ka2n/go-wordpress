@@ -11,6 +11,7 @@ import (
 	"io/ioutil"
 	"mime/multipart"
 	"net/http"
+	"net/http/httputil"
 	"net/url"
 	"reflect"
 	"strconv"
@@ -513,6 +514,12 @@ func checkResponse(r *http.Response) error {
 	if c := r.StatusCode; 200 <= c && c <= 299 {
 		return nil
 	}
+
+	if r != nil {
+		responseDump, _ := httputil.DumpResponse(r, true)
+		fmt.Println(string(responseDump))
+	}
+
 	errorResponse := &Error{Response: r}
 	data, err := ioutil.ReadAll(r.Body)
 	if err == nil && data != nil {
