@@ -12,6 +12,7 @@ import (
 	"mime/multipart"
 	"net/http"
 	"net/url"
+	"path"
 	"reflect"
 	"strconv"
 	"strings"
@@ -231,10 +232,15 @@ func (c *Client) NewRequest(method, urlStr string, body interface{}) (*http.Requ
 	if urlStr != "" {
 		urlStr = fmt.Sprintf("/wp-json/wp/v2/%s", urlStr)
 	}
-	u, err := c.baseURL.Parse(urlStr)
+
+	reqPath, err := url.Parse(urlStr)
 	if err != nil {
 		return nil, err
 	}
+
+	u := *c.baseURL
+	u.Path = path.Join(u.Path, reqPath.Path)
+	u.RawQuery = reqPath.RawQuery
 
 	var buf io.ReadWriter
 	if body != nil {
